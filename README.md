@@ -1,4 +1,4 @@
-# ZenoPay-API-Visa-and-MasterCard-Order-Creation-Endpoint-Documentation
+# ZenoPay-API-Dynamic-TANQR-CODE-Creation-Endpoint-Documentation
 
 
 
@@ -27,13 +27,6 @@ x-api-key: YOUR_API_KEY
 | `buyer_name`        | string  | ✅        | Full name of the buyer                 |
 | `buyer_phone`       | string  | ✅        | Buyer's phone number (local format)    |
 | `amount`            | float   | ✅        | Amount to be charged                   |
-| `currency`          | string  | ✅        | ISO currency code (e.g., TZS)          |
-| `payment_methods`   | string  | ✅        | Payment method: `CARD`, `M-PESA`, etc. |
-| `billing.firstname` | string  | ✅        | First name on billing info             |
-| `billing.lastname`  | string  | ✅        | Last name on billing info              |
-| `billing.phone`     | string  | ✅        | Billing phone number in E.164 format   |
-| `status`            | string  | ✅        | Default: `pending`                     |
-| `no_of_items`       | integer | ✅        | Total number of items in the order     |
 
 ---
 
@@ -51,13 +44,6 @@ curl -X POST https://zenoapi.com/api/payments/orders/create/ \
     "buyer_name": "John Joh",
     "buyer_phone": "0652449389",
     "amount":  1000,
-    "currency":"TZS",
-    "payment_methods":"CARD",
-    "billing.firstname" : "John",
-    "billing.lastname" : "Doe",
-    "billing.phone" : "255xxxxxxxxx",
-    "status" : "pending",
-    "no_of_items": 3
 }'
 ```
 
@@ -77,13 +63,6 @@ payload = {
     "buyer_name": "John Joh",
     "buyer_phone": "0652449389",
     "amount": 1000,
-    "currency": "TZS",
-    "payment_methods": "CARD",
-    "billing.firstname": "John",
-    "billing.lastname": "Doe",
-    "billing.phone": "255xxxxxxxxx",
-    "status": "pending",
-    "no_of_items": 3
 }
 
 response = requests.post(url, headers=headers, json=payload)
@@ -103,7 +82,8 @@ print(response.json())
     "reference": "ZENO123456789",
     "status": "pending",
     "amount": 1000,
-    "payment_url": "https://zenoapi.com/pay/redirect/ZENO123456789"
+    "payment_url": "https://zenoapi.com/pay/redirect/ZENO123456789",
+    "tanqr" : "434434"
   }
 }
 ```
@@ -152,13 +132,7 @@ x-api-key: YOUR\_API\_KEY
   "buyer_name": "John Doe",
   "buyer_phone": "0652449389",
   "amount": 1000,
-  "currency": "TZS",
-  "payment_methods": "CARD",
-  "billing.firstname": "John",
-  "billing.lastname": "Doe",
-  "billing.phone": "255xxxxxxxxx",
-  "status": "pending",
-  "no_of_items": 3
+
 }
 ````
 

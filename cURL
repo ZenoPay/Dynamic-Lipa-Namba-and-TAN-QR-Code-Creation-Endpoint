@@ -7,11 +7,4 @@ curl -X POST https://zenoapi.com/api/payments/orders/create/ \
     "buyer_name": "John Joh",
     "buyer_phone": "0652449389",
     "amount":  1000,
-    "currency":"TZS",
-    "payment_methods":"CARD",
-    "billing.firstname" : "John",
-    "billing.lastname" : "Doe",
-    "billing.phone" : "255xxxxxxxxx",
-    "status" : "pending",
-    "no_of_items": 3
 }'
