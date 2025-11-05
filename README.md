@@ -1,6 +1,6 @@
 
 
-# 🚀 ZenoPay API – Dynamic TAN QR Code Creation Endpoint
+# 🚀 ZenoPay API – Dynamic Lipa Namba and TAN QR Code Creation Endpoint
 
 Easily create payment orders and generate a **Dynamic TAN QR Code** for your customers using ZenoPay’s API.
 
